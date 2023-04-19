@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Children, useState } from 'react';
 import {
   AppShell,
   Navbar,
@@ -11,7 +11,7 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 
-export default function Layout() {
+export default function Layout({ children }) {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
   return (
@@ -56,12 +56,12 @@ export default function Layout() {
               />
             </MediaQuery>
 
-            <Text>Application header</Text>
+            <Text>todolist clone</Text>
           </div>
         </Header>
       }
     >
-      <Text>Resize app to see responsive navbar in action</Text>
+      {children}
     </AppShell>
   );
 }
